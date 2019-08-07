@@ -1,5 +1,5 @@
 name: Grav Coder
-version: 0.1.4
+version: 0.1.4-akisys-dev1
 description: Grav Coder, theme with minimal clutter and maximum content visibility! Inspired from hugo-coder theme.
 icon: rebel
 author:
@@ -14,7 +14,7 @@ readme: https://github.com/ParitoshBh/grav-coder/blob/master/README.md
 license: MIT
 
 form:
-  validation: loose
+  validation: strict
   fields:
     dropdown.enabled:
         type: toggle
