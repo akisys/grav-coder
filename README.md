@@ -58,6 +58,7 @@ Manually updating Grav Coder is pretty simple. Here is what you will need to do 
 * Blog item view template
 * Categories view (listing)
 * Pagination support (defaults to 10 items per page)
+* Taxonomy display support
 
 # Setup
 
@@ -113,12 +114,20 @@ Once this is done, you should be able to see the new theme on the frontend.
 
 There are certain sections of the theme you can customize, in order to do so,
 * Create `themes` directory under `/yoursite/user/config` (skip this step if it already exists)
+* Overwrite or extend styles inside `custom.css` under `/yoursite/user/themes/yourtheme/css`
 * Create `grav-coder.yaml` file under `/yoursite/user/config/themes` (this makes sure any configurations made to theme persist when updating the theme)
 * Within `grav-coder.yaml` file following configuration are available,
   ```
-  # Title in navigation bar
   navbar:
+    # Title in navigation bar
     title: Grav Coder
+    # Login link in navbar
+    # Note: Logout link appears automatically if enabled in following format,
+    # <FULL_NAME>, Logout or <USERNAME>, Logout (if full name isn't available)
+    auth_link:
+      enabled: false
+      login_slug: login
+      login_label: Login
 
   # Copyright text visible in footer and (start) year
   # If 'copyright_start_year' is not defined then it isn't shown
@@ -146,8 +155,10 @@ There are certain sections of the theme you can customize, in order to do so,
       icon: fa-stack-overflow
 
   # Navigation links (prev/next) on post page (enabled by default)
+  # Taxonomy links on post page (enabled by default)
   post:
     navigation: false
+    taxonomy: false
 
   # Pagination - number of items to show per page
   pagination:

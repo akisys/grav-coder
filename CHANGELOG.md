@@ -1,10 +1,40 @@
-# v0.1.4
-## 07/26/2019
+# v0.1.8
+## 12/25/2020
+
+1. [](#new)
+    * Add support for Grav version `1.7.0`.
+    * Add support for loading jquery debugging. Only enabled when debugging is enabled.
+    * Add option to show login/logout link in navbar.
+    * Show tags (below categories) as part of taxonomy. Thanks [@akisys](https://github.com/akisys).
+1. [](#bugfix)
+    * Attempt to fix navigation on item detail page. Hopefully this time for good.
+
+# v0.1.7
+## 09/09/2020
 
 1. [](#bugfix)
-    * Comma separated categories (on blog entry page). Fixes [#11](https://github.com/ParitoshBh/grav-coder/issues/11)
+    * Attempt fixing navigation on item detail page [#18](https://github.com/ParitoshBh/grav-coder/issues/18). Thanks [@HymieAli](https://github.com/HymieAli).
+
+# v0.1.6
+## 12/30/2019
+
+1. [](#bugfix)
+    * Include host value when building page navigation (newer) slug. Fixes [#16](https://github.com/ParitoshBh/grav-coder/issues/16)
+
+# v0.1.5
+## 11/21/2019
+
+1. [](#bugfix)
+    * Include host value when building page navigation slug. Fixes [#16](https://github.com/ParitoshBh/grav-coder/issues/16)
+
+# v0.1.4
+## 08/22/2019
+
 1. [](#new)
     * Highlight selected page in navbar. Thanks [@samuelstein](https://github.com/samuelstein)
+    * Overwrite or extend styles using `custom.css`. Thanks [@samuelstein](https://github.com/samuelstein)
+1. [](#bugfix)
+    * Comma separated categories (on blog entry page). Fixes [#11](https://github.com/ParitoshBh/grav-coder/issues/11)
 
 # v0.1.3
 ## 05/16/2019

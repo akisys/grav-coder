@@ -1,12 +1,16 @@
 {% extends 'partials/base.html.twig' %}
 
 {% if uri.param('category') %}
-	{% set page_title = "Category: " ~ uri.param('category') %}
+	{% set page_title = theme_config.listing_title.taxonomy.category | default('Category: ') ~ uri.param('category') %}
+{% elseif uri.param('tag') %}
+	{% set page_title = theme_config.listing_title.taxonomy.tag | default('Tag: ') ~ uri.param('tag') %}
 {% else %}
-	{% set page_title = "Posts" %}
+	{% set page_title = theme_config.listing_title.blog | default('Posts') %}
 {% endif %}
 
-{% block title %}{{ page_title }} | {{ parent()  }}{% endblock %}
+{% block title %}
+	{{ page_title }} | {{ parent() }}
+{% endblock %}
 
 {% block body %}
 
@@ -43,12 +47,12 @@
 			<div>
 				{% if currentPage != '1' %}
 					<div class="float-left">
-						<i class="far fa-hand-point-left"></i> <a href="{{ page.url ~ '/page' ~ system.param_sep ~ (currentPage - 1) }}">Newer</a>
+						<i class="far fa-hand-point-left"></i> <a href="{{ page.url(true) ~ '/page' ~ system.param_sep ~ (currentPage - 1) }}">Newer</a>
 					</div>
 				{% endif %}
 				{% if (currentPage + 1) <= pagesInCollection %}
 					<div class="float-right">
-						<a href="{{ page.url ~ '/page' ~ system.param_sep ~ (currentPage + 1) }}">Older</a> 
+						<a href="{{ page.url(true) ~ '/page' ~ system.param_sep ~ (currentPage + 1) }}">Older</a> 
 						<i class="far fa-hand-point-right"></i>
 					</div>
 				{% endif %}
